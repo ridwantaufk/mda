@@ -4,6 +4,7 @@ import React, { useState, useEffect, RefObject } from "react";
 import { Menu, X } from "lucide-react";
 import LogoDuluinAnimation from "../animations/LogoDuluinAnimation";
 import { BsWhatsapp } from "react-icons/bs";
+import Image from "next/image";
 
 interface NavLinkProps {
   href: string;
@@ -93,8 +94,8 @@ const Header: React.FC<HeaderProps> = ({ scrollContainerRef }) => {
 
   const navItems = [
     { label: "Produk", href: "#produk" },
-    { label: "Blog", href: "#blog" },
-    { label: "Karir", href: "#karir" },
+    // { label: "Blog", href: "#blog" },
+    // { label: "Karir", href: "#karir" },
     { label: "Tentang Kami", href: "#tentang" },
   ];
 
@@ -111,14 +112,18 @@ const Header: React.FC<HeaderProps> = ({ scrollContainerRef }) => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 group">
-            <LogoDuluinAnimation
+          <button
+            onClick={() => window.location.reload()}
+            className="cursor-pointer flex items-center space-x-2 group"
+          >
+            <Image
+              src="/MDAP_LOGO.svg"
+              alt="Logo MDAP"
               width={150}
               height={30}
-              restartInterval={5000}
               className="header-logo transition-transform duration-300 group-hover:scale-105"
             />
-          </div>
+          </button>
           <nav className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <NavLink
@@ -140,9 +145,7 @@ const Header: React.FC<HeaderProps> = ({ scrollContainerRef }) => {
               <div className="relative w-6 h-6">
                 <Menu
                   className={`absolute inset-0 transition-all duration-300 ${
-                    isMenuOpen
-                      ? "rotate-180 opacity-0"
-                      : "rotate-0 opacity-100"
+                    isMenuOpen ? "rotate-180 opacity-0" : "rotate-0 opacity-100"
                   }`}
                   size={24}
                 />

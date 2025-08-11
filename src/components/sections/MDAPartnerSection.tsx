@@ -9,6 +9,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import Image from "next/image";
 
 interface ServiceCardProps {
   title: string;
@@ -206,20 +207,19 @@ const MDAPartnerSection: React.FC = () => {
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-30"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-blue-100 to-transparent rounded-full blur-3xl opacity-20"></div>
 
-          <div className="bg-white rounded-t-3xl shadow-2xl p-8">
+          <div className="border-b border-gray-200 border-t rounded-t-3xl shadow-xs p-8">
             <div className="flex items-center space-x-6">
               {/* MDA Logo */}
-              <div className="flex items-center space-x-3">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg font-bold text-xl">
-                  MDA
-                </div>
-                <span className="text-xl font-semibold text-gray-800">
-                  PARTNER
-                </span>
-              </div>
+              <Image
+                src="/MDAP_LOGO.svg"
+                alt="Logo MDAP"
+                width={150}
+                height={30}
+                className="header-logo transition-transform duration-300 group-hover:scale-105"
+              />
 
               {/* Description */}
-              <p className="text-gray-600 flex-1 leading-relaxed">
+              <p className="text-gray-600 flex-1 text-center leading-relaxed">
                 Mitra Daksa Anarawata (MDA) adalah penyedia tenaga kerja dan
                 outsourcing berkomitmen untuk menyediakan solusi ketenagakerjaan
                 yang inovatif dan efisien. Kami memberikan solusi untuk
@@ -269,8 +269,15 @@ const MDAPartnerSection: React.FC = () => {
             </div>
 
             {/* Center Image */}
-            <div className="flex justify-center items-center lg:sticky lg:top-32">
-              <CenterImage isVisible={isVisible} />
+            <div className="flex justify-center items-center md:relative md:top-1/2 md:-translate-y-1/2">
+              {/* <CenterImage isVisible={isVisible} /> */}
+              <Image
+                src="/images/woman-with-shirt.svg"
+                alt="woman-with-shirt"
+                width={300}
+                height={80}
+                className="header-logo transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
 
             {/* Right Column */}
@@ -309,8 +316,8 @@ const MDAPartnerSection: React.FC = () => {
               <button className="bg-white text-orange-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg">
                 Hubungi Kami Sekarang
               </button>
-          </div>
-</div> */}
+            </div>
+          </div> */}
         </div>
       </section>
     </>

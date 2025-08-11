@@ -8,7 +8,11 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import CoverageAreaSection from "@/components/sections/CoverageAreaSection";
 import CTASection from "@/components/sections/CTASection";
-import Footer from "@/components/layout/Footer";
+import {
+  MinimalistFooter,
+  TwoColumnFooter,
+  CardStyleFooter,
+} from "@/components/layout/Footer";
 import FaqSection from "./sections/FaqSection";
 
 const MDAPartnerWebsite: React.FC = () => {
@@ -30,7 +34,7 @@ const MDAPartnerWebsite: React.FC = () => {
           <FaqSection />
           <CTASection />
         </main>
-        <Footer />
+        <TwoColumnFooter />
       </div>
     </div>
   );

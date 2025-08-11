@@ -80,7 +80,7 @@ const CoverageAreaSection = () => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-gray-700 lg:text-4xl font-bold mb-4">
               Jangkauan Area{" "}
               <span className="text-orange-500">MDA Partner</span>
             </h2>
@@ -94,9 +94,7 @@ const CoverageAreaSection = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div
               className={`lg:w-1/2 w-full transition-all duration-1000 delay-200 ${
-                isVisible
-                  ? "opacity-100 scale-100"
-                  : "opacity-0 scale-95"
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
               <div className="relative bg-gray-100 p-4 sm:p-8 rounded-2xl shadow-lg border border-gray-200">
@@ -139,9 +137,7 @@ const CoverageAreaSection = () => {
                       key={area.id}
                       className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 cursor-pointer ${
                         isVisible ? "animate-pop-in" : "opacity-0"
-                      } ${
-                        hoveredArea === area.id ? "scale-110" : "scale-100"
-                      }`}
+                      } ${hoveredArea === area.id ? "scale-110" : "scale-100"}`}
                       style={{
                         ...area.pinPosition,
                         animationDelay: `${500 + index * 100}ms`,
